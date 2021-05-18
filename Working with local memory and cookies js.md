@@ -55,6 +55,6 @@ js-cookie - бібліотека JavaScript, що надає методи для
 ## Встановити cookie для всіх сторінок сайту ##
     Cookies.set ( 'nameCookie', 'valueCookie'); // => "nameCookie = valueCookie; path = /"
 ## Створити cookie, дійсну 30 днів (від поточного моменту часу) і видиму будь-якими сторінками сайту ##
-    Cookies.set ( 'nameCookie', 'valueCookie', {expires: 30}); // => "nameCookie = valueCookie; path = /; expires = Thu, 13 Apr 2017 13:00:15 GMT"
+    Cookies.set ( 'nameCookie', 'valueCookie', {expires: 30}); // => "nameCookie = valueCookie; path = /; expires = Thu, 18 May 2021 13:00:15 GMT"
 ## Виконати запис куки, доступ до якої матиме тільки поточна сторінка (термін зберігання 365 днів) ##
-    Cookies.set ( 'nameCookie', 'valueCookie', {expires: 365, path: ''}); // => "nameCookie = valueCookie; expires = Wed, 14 Mar 2018 13:00:36 GMT"
+    Cookies.set ( 'nameCookie', 'valueCookie', {expires: 365, path: ''}); // => "nameCookie = valueCookie; expires = Wed, 16 May 2021 13:00:36 GMT"
