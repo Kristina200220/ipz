@@ -44,4 +44,4 @@
 js-cookie - бібліотека JavaScript, що надає методи для зручної роботи з cookies.
 
 ## Підключення js-cookie до сторінки ##
-<script src="/path/to/js.cookie.js"></script>
+    <script src="/path/to/js.cookie.js"></script>
