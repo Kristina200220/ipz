@@ -45,3 +45,16 @@ js-cookie - бібліотека JavaScript, що надає методи для
 
 ## Підключення js-cookie до сторінки ##
     <script src="/path/to/js.cookie.js"></script>
+## Установка (set) cookie ##
+Запис cookie здійснюється за допомогою функції set:
+
+    // name - ключ (ім'я) куки
+    // value - значення, пов'язане з ключем name
+   // attributes (необов'язковий параметр) - атрибути куки в форматі об'єкта
+    Cookies.set ( 'name', 'value' [, attributes]);
+## Встановити cookie для всіх сторінок сайту ##
+    Cookies.set ( 'nameCookie', 'valueCookie'); // => "nameCookie = valueCookie; path = /"
+## Створити cookie, дійсну 30 днів (від поточного моменту часу) і видиму будь-якими сторінками сайту ##
+    Cookies.set ( 'nameCookie', 'valueCookie', {expires: 30}); // => "nameCookie = valueCookie; path = /; expires = Thu, 13 Apr 2017 13:00:15 GMT"
+## Виконати запис куки, доступ до якої матиме тільки поточна сторінка (термін зберігання 365 днів) ##
+    Cookies.set ( 'nameCookie', 'valueCookie', {expires: 365, path: ''}); // => "nameCookie = valueCookie; expires = Wed, 14 Mar 2018 13:00:36 GMT"
