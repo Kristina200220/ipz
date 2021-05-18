@@ -51,7 +51,7 @@ js-cookie - бібліотека JavaScript, що надає методи для
     // name - ключ (ім'я) куки
     // value - значення, пов'язане з ключем name
    // attributes (необов'язковий параметр) - атрибути куки в форматі об'єкта
-    Cookies.set ( 'name', 'value' [, attributes]);
+   Cookies.set ( 'name', 'value' [, attributes]);
 ## Встановити cookie для всіх сторінок сайту ##
     Cookies.set ( 'nameCookie', 'valueCookie'); // => "nameCookie = valueCookie; path = /"
 ## Створити cookie, дійсну 30 днів (від поточного моменту часу) і видиму будь-якими сторінками сайту ##
