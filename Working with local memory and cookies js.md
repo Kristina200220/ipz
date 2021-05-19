@@ -81,4 +81,71 @@ js-cookie - бібліотека JavaScript, що надає методи для
 - **domain** - рядок, який вказує домен. При цьому куки також будуть доступні у всіх піддоменів цього домену.
 - **secure** - встановлює, чи потрібно при передачі cookies використовувати безпечний протокол (https). За замовчуванням: false, тобто не потрібно.
 ## Приклад використання ##
+В даному прикладі зроблена сторінка, яка запитує Ваше ім'я при першому відвідуванні, потім вона зберігає Ваше ім'я в куки і показує його при наступних відвідинах.
 ![1](https://github.com/Kristina200220/ipz/blob/main/imag/1.png)
+![2](https://github.com/Kristina200220/ipz/blob/main/imag/2.png)
+Для куки задаємо термін зберігання в 1 рік від поточної дати, це означає, що браузер збереже Ваше ім'я навіть якщо Ви закриєте його.
+
+Ви можете видалити кук натиснувши на посилання "Забути про мене", яка викликає функцію delete_cookie () і оновлює сторінку, щоб знову запитати у Вас ім'я.
+
+Наводжу основну частину коду:
+function set_cookie ( name, value, expires_year, expires_month, expires_day, path, domain, secure )
+    {
+      var cookie_string = name + "=" + escape ( value );
+    
+      if ( expires_year )
+      {
+        var expires = new Date ( expires_year, expires_month, expires_day );
+        cookie_string += "; expires=" + expires.toGMTString();
+      }
+    
+      if ( path )
+        cookie_string += "; path=" + escape ( path );
+    
+      if ( domain )
+        cookie_string += "; domain=" + escape ( domain );
+    
+      if ( secure )
+        cookie_string += "; secure";
+    
+      document.cookie = cookie_string;
+    
+    }
+    
+    function delete_cookie ( cookie_name )
+    {
+      var cookie_date = new Date ( );  //Поточна дата і час
+      cookie_date.setTime ( cookie_date.getTime() - 1 );
+      document.cookie = cookie_name += "=; expires=" + cookie_date.toGMTString();
+    }
+    
+    function get_cookie ( cookie_name )
+    {
+      var results = document.cookie.match ( '(^|;) ?' + cookie_name + '=([^;]*)(;|$)' );
+    
+      if ( results )
+        return ( unescape ( results[2] ) );
+      else
+        return null;
+    }
+    
+    if ( ! get_cookie ( "username" ) )
+    {
+      var username = prompt ( "Напиши своє ім'я", "" );
+    
+      if ( username )
+      {
+        var current_date = new Date;
+        var cookie_year = current_date.getFullYear ( ) + 1;
+        var cookie_month = current_date.getMonth ( );
+        var cookie_day = current_date.getDate ( );
+        set_cookie ( "username", username, cookie_year, cookie_month, cookie_day );
+        document.location.reload( );
+      }
+    }
+    else
+    {
+      var username = get_cookie ( "username" );
+      document.write ( "Привіт, " + username + ", рада бачити тебе на своєму сайті!" );
+      document.write ( "<br><a href=\"javascript:delete_cookie('username'); document.location.reload( );\">Забути мене</a>" );
+    }
