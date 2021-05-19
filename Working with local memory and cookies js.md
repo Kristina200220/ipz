@@ -181,7 +181,9 @@ setItem()
 
     localStorage.clear()
  ## Приклад використання ##
- ![3](https://github.com/Kristina200220/ipz/blob/main/imag/3.png)
+ 
+ ![3](https://github.com/Kristina200220/ipz/blob/main/imag/3.PNG)
 В полі для вводу можна писати якісь задачі і вони будуть відображатися нижче
 Щоб очистити всі задачі треба натиснути кнопку Clear all
- ![4](https://github.com/Kristina200220/ipz/blob/main/imag/4.png)
+
+ ![4](https://github.com/Kristina200220/ipz/blob/main/imag/4.PNG)
