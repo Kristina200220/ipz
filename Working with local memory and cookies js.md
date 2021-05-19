@@ -89,8 +89,10 @@ js-cookie - бібліотека JavaScript, що надає методи для
 Ви можете видалити кук натиснувши на посилання "Забути про мене", яка викликає функцію delete_cookie () і оновлює сторінку, щоб знову запитати у Вас ім'я.
 
 Наводжу основну частину коду:
-function set_cookie ( name, value, expires_year, expires_month, expires_day, path, domain, secure )
-    {
+     
+     function set_cookie ( name, value, expires_year, expires_month, expires_day, path, domain, secure )
+       {
+       
       var cookie_string = name + "=" + escape ( value );
     
       if ( expires_year )
