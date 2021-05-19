@@ -162,14 +162,22 @@ js-cookie - бібліотека JavaScript, що надає методи для
 setItem()
 
     localStorage.setItem('key', 'value')
+    
+    localStorage.setItem("name", "Kristina");
+Ця функція приймає два параметри. Перший параметр - це ім'я, а другий параметр - значення.
 ## Отримати значення за ключем ##
 Якщо ви хочете отримати значення для певного ключа, ви будете використовувати метод getItem ().
      
      localStorage.getItem('key')
+     
+     localStorage.getItem("name"); //Kristina
 ## Видалення ##
 Ви можете видалити по ключу дані за допомогою removeItem ().
 
     localStorage.removeItem('key')
+    
+    localStorage.removeItem('name');
 Використання clear () очистить усі локальні сховища.
 
     localStorage.clear()
+  
