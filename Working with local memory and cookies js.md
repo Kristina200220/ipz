@@ -60,8 +60,10 @@ js-cookie - бібліотека JavaScript, що надає методи для
     Cookies.set ( 'nameCookie', 'valueCookie', {expires: 365, path: ''}); // => "nameCookie = valueCookie; expires = Wed, 18 May 2021 13:00:36 GMT"
 ## Функція для видалення куки ##
 Функція "видаляє" куки з браузера за допомогою установки терміну зберігання на одну секунду раніше поточного значення часу.
-   Cookies.remove('nameCookie');
+    
+    Cookies.remove('nameCookie');
 Видалення cookie із зазначенням атрибута path:
+    
     Cookies.set ('name', 'value', {path: ''});
-Cookies.remove ('name', {path: '/'}); // не вийде (неправильний шлях)
-Cookies.remove ('name', {path: ''}); // видалиться (вказано правильний шлях)
+    Cookies.remove ('name', {path: '/'}); // не вийде (неправильний шлях)
+    Cookies.remove ('name', {path: ''}); // видалиться (вказано правильний шлях)
